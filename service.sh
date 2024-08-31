@@ -14,20 +14,15 @@ FLASH_FILE="/sys/class/camera/flash/rear_flash"
 		"${POWER} ${PRESS}")
 		    # On power press, we do what febeslmeisl did. It
 		    # seems to work more reliably on power press than
-		    # the originally concieved release.
+		    # the originally conceived release.
 		    /system/bin/log -t Magisk -p i "[XC5_GSI_Fixes] Detected relevant event. Applying fix."
 		    /system/bin/echo check_connection > /sys/class/sec/tsp/cmd
 		    /system/bin/log -t Magisk -p i "[XC5_GSI_Fixes] Fix attempt result: $(/system/bin/cat /sys/class/sec/tsp/cmd_result)"
 		    ;;
-		"${XCOVER} ${PRESS}")
-		    /system/bin/log -t Magisk -p i "[XC5_GSI_Fixes] XCover button pressed. Resetting timer."
-		    SECONDS=0 # Built-in shell timer.
-		    ;;
 		"${XCOVER} ${RELEASE}")
-		    [ "${SECONDS}" -ge 1 ] && /system/bin/echo "$((1-$(/system/bin/cat ${FLASH_FILE})))" > ${FLASH_FILE} \
-			&& /system/bin/log -t Magisk -p i "[XC5_GSI_Fixes] Toggled flashlight."
+		    /system/bin/echo "$((1-$(/system/bin/cat ${FLASH_FILE})))" > "${FLASH_FILE}"
+	            /system/bin/log -t Magisk -p i "[XC5_GSI_Fixes] Toggled flashlight."
 		    ;;
-
 	    esac
 	done
     }
