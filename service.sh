@@ -1,8 +1,10 @@
 #!/system/bin/sh
-# Figure out using `getevent'.
-# Event: power button release. Because grep is run with -E, this can
-# be several events delimeted with the | (pipe) character.
-EVENTS="/dev/input/event1: 0001 0074 00000001"
+PRESS="00000001"; RELEASE="00000000"
+POWER="/dev/input/event1: 0001 0074"
+XCOVER="/dev/input/event6: 0001 00fc"
+
+# Events to catch.
+EVENTS="${POWER}${PRESS}|${XCOVER}${PRESS}|${XCOVER}${RELEASE}"
 
 /system/bin/getevent | /system/bin/grep -E "$EVENTS" |
     {
