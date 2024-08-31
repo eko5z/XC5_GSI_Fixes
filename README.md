@@ -27,6 +27,6 @@ With these fixes the XCover 5 should be perfectly usable on custom
 GSIs (tested by me on the Google AOSP Android 14 GSI).
 
 # Usage
-1. Download ZIP from this page by clicking on the green `<> Code`
-   button.
-2. Install the downloaded ZIP via Magisk.
+1. Clone this repo and create a ZIP file which houses its contents,
+   without any parent directory.
+2. Install the ZIP via Magisk.
