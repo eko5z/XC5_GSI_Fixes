@@ -1,4 +1,4 @@
-# Samsung XCover 5 GSI Tweaks
+# Samsung XCover 5 GSI Fixes
 
 This module does the following:
 - Fixes touchscreen bug, where the touchscreen disables after the
