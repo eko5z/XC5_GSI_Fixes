@@ -1,9 +1,11 @@
+# Samsung XCover 5 GSI Tweaks
+
 This module does the following:
 - Fixes touchscreen bug, where the touchscreen disables after the
   screen is locked. This is done using a service script which watches
   for power button events. Fix originally conceived by febeslmeisl
   [here](https://github.com/phhusson/treble_experimentations/issues/2205#issuecomment-1079981168). This
-  doesn't work around the screne turning off by e.g. the proximity
+  doesn't work around the screen turning off by e.g. the proximity
   sensor, but makes the phone usable enough.
 - ~~Fixes SMS receiving by replacing pre-existing RIL libraries with
   ones from earlier releases of the ROM as per [this XDA
@@ -19,3 +21,8 @@ This module does the following:
 
 With these fixes the XCover 5 should be perfectly usable on custom
 GSIs (tested by me on the Google AOSP Android 14 GSI).
+
+# Usage
+1. Download ZIP from this page by clicking on the green `<> Code`
+   button.
+2. Install the downloaded ZIP via Magisk.
