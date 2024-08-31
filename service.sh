@@ -24,7 +24,7 @@ FLASH_FILE="/sys/class/camera/flash/rear_flash"
 		    SECONDS=0 # Built-in shell timer.
 		    ;;
 		"${XCOVER} ${RELEASE}")
-		    [ "${SECONDS}" -ge 1 ] && echo "$((1-$(cat ${FLASH_FILE})))" > ${FLASH_FILE} \
+		    [ "${SECONDS}" -ge 1 ] && /system/bin/echo "$((1-$(/system/bin/cat ${FLASH_FILE})))" > ${FLASH_FILE} \
 			&& /system/bin/log -t Magisk -p i "[XC5_GSI_Fixes] Toggled flashlight."
 		    ;;
 
