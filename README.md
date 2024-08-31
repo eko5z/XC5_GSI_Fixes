@@ -19,9 +19,7 @@ This module does the following:
   feature, and ambient display. Perhaps this can be replaced by an
   overlay adapted for the XCover 5.
 - [TODO: make this optional, as this is not a fix or tweak per se]
-  Makes the XCover key turn on/off the flashlight after one second of
-  being down and then being released. A bit janky, but shouldn't hog
-  resources.
+  Makes the XCover key turn on/off the flashlight.
 
 With these fixes the XCover 5 should be perfectly usable on custom
 GSIs (tested by me on the Google AOSP Android 14 GSI).
